@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 50px;
+            padding: 0;
+            box-sizing: border-box;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+            background-image: url("./shark2.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .bb{
+            border-bottom: 1px solid rgba(44, 43, 43, 0.548);
+            width: 100%;
+        }
+        .mt{
+            margin-top: 20px;
+        }
+        .mb{
+            margin-bottom: 50px;
+        }
+        .border{
+            border: 1px solid black;
+        }
+        .divBox{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin: 10px;
+            align-items: center;
+        }
+        .flex_column{
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.658);
+        }
+        .parent{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 30px;
+            background-color: rgba(253, 249, 243, 0.418);
+        }
+        #titleLabel{
+            font-size: 3rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid rgba(24, 23, 23, 0.692);
+        }
+        #subtitleLabel{
+            font-size: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid rgba(24, 23, 23, 0.692);
+        }
+        .Input{
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+        .InputBlank{
+            font-style: italic;
+            color: tomato;
+        }
+        .InputError{
+            font-style: italic;
+            color: tomato; 
+        }
+        .calInput{
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 5px;
+        }
+        .selInput{
+            padding: 10px;
+            width: 220px;
+            margin-bottom: 5px;
+        }
+        option{
+            background-color: rgb(145, 179, 180);
+        }
+        #btn{
+            width: 150px;
+            padding: 10px;
+            align-items: center;
+            background-color: rgb(66, 61, 61);
+            color: white;
+        }
+        .flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .error{
+            border: 1px solid red;
+        }
+        .none{
+            display: none;
+        }
+        .block{
+            display: block;
+        }
+        .end_msg{
+            background-color: white;
+            width: 500px;
+            height: 100px;
+            font-size: 1.5rem;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 767px) and (min-width: 320px) {
+            body{
+                background-image: none;
+            }
+            #titleLabel{
+                font-size: 1.5rem;
+            }
+            #subtitleLabel{
+            font-size: .8rem;
+            }
+            .divBox{
+                /* width: 200px; */
+                width: 75%;
+                margin-right: 0;
+            }
+            .end_msg{
+                width: 70%;
+                font-size: 1rem;
+            }
+            .calInput{
+                width: 150px;
+            }
+            #CurrentDate{
+                width: 60%;
+                margin-bottom: 20px;
+            }
+            .selInput{
+                padding: 5px;
+                width: 180px;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <form class="parent border flex" id="Form">
+        <label for="body" id="titleLabel" class="mb mt"> So&So Loan Shark Inc.</label>
+        <label for="body" id="subtitleLabel" class="mb"> Please Fill Out The Application Document Accurately:</label>
+        <label for="" id="CurrentDate" class="mb"></label>
+        <div class="divBox bb">
+            <label for="">Surname:</label>
+            <input class="Input" type="text" placeholder="Enter Last Name">
+            <p class="InputBlank none">This field is required!!</p>
+        </div>
+        <div class="divBox bb">
+            <label for="">First Name:</label>
+            <input class="Input" type="text" placeholder="Enter First Name">
+            <p class="InputBlank none">This field is required</p>
+        </div>
+        <div class="divBox bb">
+            <label for="">Other Names:</label>
+            <input class="Input" type="text" placeholder="Enter Other Names (Optional)">
+            
+        </div>
+        <div class="divBox bb">
+            <label for="">Current Balance:</label>
+            <input class="calInput" placeholder="&#8358 0.00">
+            <p class="InputBlank none">This field is required</p>
+            <p class="InputError none">Only numbers are accepted</p>
+        </div>
+        <div class="divBox bb">
+            <label for="">Preffered Loan Amount:</label>
+            <input class="calInput" placeholder="&#8358 0.00">
+            <p class="InputBlank none">This field is required</p>
+            <p class="InputError none">Only numbers are accepted</p>
+        </div>
+        <div class="divBox bb">
+            <label for="">Deposit Frequency:</label>
+            <select class="selInput" >
+                <option class="options" value="0">Never</option>
+                <option class="options" value="1">Only one month</option>
+                <option class="options" value="2">Two consecutive months</option>
+                <option class="options" value="3">Three consecutive months</option>
+                <option class="options" value="4">Four consecutive months</option>
+                <option class="options" value="5">Five consecutive months</option>
+                <option class="options" value="6">Six consecutive months</option>
+                <option class="options" value="7">Above Six consecutive months</option>
+            </select>
+        </div>
+        <div class="divBox bb">
+            <label for="">Enter Date of Last Deposit to Account:</label>
+            <input class="calInput" type="date" id="L-Depo">
+            <p class="InputBlank none">This field is required</p>
+            <p id="wrongDate" class="InputError none">Entered Date is in the Future</p>
+        </div>
+        <div class="divBox bb">
+            <label for="">Enter Date of Last Loan Collection:</label>
+            <input class="calInput" type="date" id="L-Coll">
+            <p class="InputBlank none">This field is required</p>
+        </div>
+        <div class="divBox bb">
+            <div>
+                <label for="">Enter Date of Next Loan Collection:</label>
+                <input class="calInput" type="date">
+                <p class="InputBlank none">This field is required</p>
+            </div>
+            <div>
+                <label for="">Enter Date of Next Loan Payment:</label>
+                <input class="calInput" type="date">
+                <p class="InputBlank none">This field is required</p>
+            </div>
+        </div>
+        <div class="divBox bb">
+            <label for="">Account Type</label>
+            <select class="selInput">
+                <option class="op">Please select account type</option>
+                <option class="op">Savings</option>
+                <option class="op">Current</option>
+            </select>
+            <p class="InputBlank none">This field is required</p>
+        </div>
+        <div class="flex_column mb">
+            <label for="" class="divBox">
+                <input id="checkbox" type="checkbox">
+                Are you sure all your details are correct?
+            </label>
+            <p id="cWarning"></p>
+        </div>
+        <label for="" id="confirmation" class="none end_msg">
+        </label>
+        <button id="btn" type="submit">Submit</button>
+        <label for="" id="Scores"></label>
+    </form>
+    <script src="js/loan_script.js"></script>
+</body>
+</html>
